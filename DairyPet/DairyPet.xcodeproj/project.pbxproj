@@ -103,9 +103,6 @@
 				DA23615E28356BDC00EBC982 /* ContentView.swift */,
 				DA23616028356BDD00EBC982 /* Assets.xcassets */,
 				DA23616228356BDD00EBC982 /* Preview Content */,
-				DA2361732835875F00EBC982 /* Extentions.swift */,
-				DA2361792835C58500EBC982 /* Messages.swift */,
-				DA03A3CD2838426A00128B90 /* CoreDataManager.swift */,
 				DA03A3D1283847C300128B90 /* PetDiary.xcdatamodeld */,
 			);
 			path = DairyPet;
@@ -129,6 +126,7 @@
 				DA23617728358F2500EBC982 /* InfoBarView.swift */,
 				DA03A3D6283859FB00128B90 /* ListingCardView.swift */,
 				DA6357FE283FEE45005B6F34 /* DetailView.swift */,
+				DA2361792835C58500EBC982 /* Messages.swift */,
 				DA63580028401D95005B6F34 /* ProfileView.swift */,
 				DA63580628426596005B6F34 /* PetAddView.swift */,
 				DA63580828427628005B6F34 /* EmptyListsView.swift */,
@@ -150,6 +148,7 @@
 		DA23616C28356D0B00EBC982 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DA03A3CD2838426A00128B90 /* CoreDataManager.swift */,
 				DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */,
 				DA03A3D42838498D00128B90 /* PetInformationViewModel.swift */,
 			);
@@ -159,6 +158,7 @@
 		DA23617B2837DB9200EBC982 /* Representable */ = {
 			isa = PBXGroup;
 			children = (
+				DA2361732835875F00EBC982 /* Extentions.swift */,
 				DA23617C2837DBA100EBC982 /* ImagePicker.swift */,
 			);
 			path = Representable;
