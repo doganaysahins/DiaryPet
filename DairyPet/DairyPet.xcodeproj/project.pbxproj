@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA03A3CE2838426A00128B90 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A3CD2838426A00128B90 /* CoreDataManager.swift */; };
+		DA03A3D0283842A900128B90 /* PetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A3CF283842A900128B90 /* PetInfo.swift */; };
+		DA03A3D3283847C300128B90 /* PetDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA03A3D1283847C300128B90 /* PetDiary.xcdatamodeld */; };
+		DA03A3D52838498D00128B90 /* PetInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A3D42838498D00128B90 /* PetInformationViewModel.swift */; };
+		DA03A3D7283859FB00128B90 /* ListingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A3D6283859FB00128B90 /* ListingCardView.swift */; };
+		DA23615D28356BDC00EBC982 /* DairyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23615C28356BDC00EBC982 /* DairyPetApp.swift */; };
+		DA23615F28356BDC00EBC982 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23615E28356BDC00EBC982 /* ContentView.swift */; };
+		DA23616128356BDD00EBC982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA23616028356BDD00EBC982 /* Assets.xcassets */; };
+		DA23616428356BDD00EBC982 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA23616328356BDD00EBC982 /* Preview Assets.xcassets */; };
+		DA23616E28356D1C00EBC982 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23616D28356D1C00EBC982 /* TabbarView.swift */; };
+		DA23617028356D8C00EBC982 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23616F28356D8C00EBC982 /* SettingsView.swift */; };
+		DA23617228356D9C00EBC982 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617128356D9C00EBC982 /* ScheduleView.swift */; };
+		DA2361742835875F00EBC982 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2361732835875F00EBC982 /* Extentions.swift */; };
+		DA23617628358ACA00EBC982 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617528358ACA00EBC982 /* CardView.swift */; };
+		DA23617828358F2500EBC982 /* InfoBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617728358F2500EBC982 /* InfoBarView.swift */; };
+		DA23617A2835C58500EBC982 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2361792835C58500EBC982 /* Messages.swift */; };
+		DA23617D2837DBA100EBC982 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617C2837DBA100EBC982 /* ImagePicker.swift */; };
+		DA23617F2837DC9500EBC982 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */; };
+		DA6357FF283FEE45005B6F34 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6357FE283FEE45005B6F34 /* DetailView.swift */; };
+		DA63580128401D95005B6F34 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580028401D95005B6F34 /* ProfileView.swift */; };
+		DA63580328403BCC005B6F34 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580228403BCC005B6F34 /* DateValue.swift */; };
+		DA63580528403BEE005B6F34 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580428403BEE005B6F34 /* Task.swift */; };
+		DA63580728426596005B6F34 /* PetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580628426596005B6F34 /* PetAddView.swift */; };
+		DA63580928427628005B6F34 /* EmptyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580828427628005B6F34 /* EmptyListsView.swift */; };
+		DAE4C8BB2849579C00F83B16 /* NewScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DA03A3CB2837F4C700128B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA03A3CD2838426A00128B90 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DA03A3CF283842A900128B90 /* PetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfo.swift; sourceTree = "<group>"; };
+		DA03A3D2283847C300128B90 /* PetDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetDiary.xcdatamodel; sourceTree = "<group>"; };
+		DA03A3D42838498D00128B90 /* PetInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInformationViewModel.swift; sourceTree = "<group>"; };
+		DA03A3D6283859FB00128B90 /* ListingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCardView.swift; sourceTree = "<group>"; };
+		DA23615928356BDB00EBC982 /* DairyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DairyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA23615C28356BDC00EBC982 /* DairyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyPetApp.swift; sourceTree = "<group>"; };
+		DA23615E28356BDC00EBC982 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DA23616028356BDD00EBC982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA23616328356BDD00EBC982 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA23616D28356D1C00EBC982 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		DA23616F28356D8C00EBC982 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DA23617128356D9C00EBC982 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		DA2361732835875F00EBC982 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		DA23617528358ACA00EBC982 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DA23617728358F2500EBC982 /* InfoBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBarView.swift; sourceTree = "<group>"; };
+		DA2361792835C58500EBC982 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		DA23617C2837DBA100EBC982 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
+		DA6357FE283FEE45005B6F34 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		DA63580028401D95005B6F34 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DA63580228403BCC005B6F34 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		DA63580428403BEE005B6F34 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		DA63580628426596005B6F34 /* PetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddView.swift; sourceTree = "<group>"; };
+		DA63580828427628005B6F34 /* EmptyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListsView.swift; sourceTree = "<group>"; };
+		DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScrollView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA23615628356BDB00EBC982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA23615028356BDB00EBC982 = {
+			isa = PBXGroup;
+			children = (
+				DA03A3CB2837F4C700128B90 /* Info.plist */,
+				DA23615B28356BDB00EBC982 /* DairyPet */,
+				DA23615A28356BDB00EBC982 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA23615A28356BDB00EBC982 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA23615928356BDB00EBC982 /* DairyPet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA23615B28356BDB00EBC982 /* DairyPet */ = {
+			isa = PBXGroup;
+			children = (
+				DA23617B2837DB9200EBC982 /* Representable */,
+				DA23616C28356D0B00EBC982 /* ViewController */,
+				DA23616B28356CFE00EBC982 /* Model */,
+				DA23616A28356CF600EBC982 /* View */,
+				DA23615C28356BDC00EBC982 /* DairyPetApp.swift */,
+				DA23615E28356BDC00EBC982 /* ContentView.swift */,
+				DA23616028356BDD00EBC982 /* Assets.xcassets */,
+				DA23616228356BDD00EBC982 /* Preview Content */,
+				DA2361732835875F00EBC982 /* Extentions.swift */,
+				DA2361792835C58500EBC982 /* Messages.swift */,
+				DA03A3CD2838426A00128B90 /* CoreDataManager.swift */,
+				DA03A3D1283847C300128B90 /* PetDiary.xcdatamodeld */,
+			);
+			path = DairyPet;
+			sourceTree = "<group>";
+		};
+		DA23616228356BDD00EBC982 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DA23616328356BDD00EBC982 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DA23616A28356CF600EBC982 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA23616D28356D1C00EBC982 /* TabbarView.swift */,
+				DA23616F28356D8C00EBC982 /* SettingsView.swift */,
+				DA23617128356D9C00EBC982 /* ScheduleView.swift */,
+				DA23617528358ACA00EBC982 /* CardView.swift */,
+				DA23617728358F2500EBC982 /* InfoBarView.swift */,
+				DA03A3D6283859FB00128B90 /* ListingCardView.swift */,
+				DA6357FE283FEE45005B6F34 /* DetailView.swift */,
+				DA63580028401D95005B6F34 /* ProfileView.swift */,
+				DA63580628426596005B6F34 /* PetAddView.swift */,
+				DA63580828427628005B6F34 /* EmptyListsView.swift */,
+				DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA23616B28356CFE00EBC982 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA03A3CF283842A900128B90 /* PetInfo.swift */,
+				DA63580228403BCC005B6F34 /* DateValue.swift */,
+				DA63580428403BEE005B6F34 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA23616C28356D0B00EBC982 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */,
+				DA03A3D42838498D00128B90 /* PetInformationViewModel.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DA23617B2837DB9200EBC982 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				DA23617C2837DBA100EBC982 /* ImagePicker.swift */,
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA23615828356BDB00EBC982 /* DairyPet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA23616728356BDD00EBC982 /* Build configuration list for PBXNativeTarget "DairyPet" */;
+			buildPhases = (
+				DA23615528356BDB00EBC982 /* Sources */,
+				DA23615628356BDB00EBC982 /* Frameworks */,
+				DA23615728356BDB00EBC982 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DairyPet;
+			productName = DairyPet;
+			productReference = DA23615928356BDB00EBC982 /* DairyPet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA23615128356BDB00EBC982 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					DA23615828356BDB00EBC982 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = DA23615428356BDB00EBC982 /* Build configuration list for PBXProject "DairyPet" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA23615028356BDB00EBC982;
+			productRefGroup = DA23615A28356BDB00EBC982 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA23615828356BDB00EBC982 /* DairyPet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA23615728356BDB00EBC982 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA23616428356BDD00EBC982 /* Preview Assets.xcassets in Resources */,
+				DA23616128356BDD00EBC982 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA23615528356BDB00EBC982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA23617828358F2500EBC982 /* InfoBarView.swift in Sources */,
+				DA23617A2835C58500EBC982 /* Messages.swift in Sources */,
+				DA6357FF283FEE45005B6F34 /* DetailView.swift in Sources */,
+				DA23617628358ACA00EBC982 /* CardView.swift in Sources */,
+				DA23617228356D9C00EBC982 /* ScheduleView.swift in Sources */,
+				DA23617F2837DC9500EBC982 /* ImagePickerViewModel.swift in Sources */,
+				DA03A3D0283842A900128B90 /* PetInfo.swift in Sources */,
+				DA23616E28356D1C00EBC982 /* TabbarView.swift in Sources */,
+				DA63580328403BCC005B6F34 /* DateValue.swift in Sources */,
+				DA03A3D3283847C300128B90 /* PetDiary.xcdatamodeld in Sources */,
+				DA03A3CE2838426A00128B90 /* CoreDataManager.swift in Sources */,
+				DA63580128401D95005B6F34 /* ProfileView.swift in Sources */,
+				DA63580528403BEE005B6F34 /* Task.swift in Sources */,
+				DA2361742835875F00EBC982 /* Extentions.swift in Sources */,
+				DA23617028356D8C00EBC982 /* SettingsView.swift in Sources */,
+				DA23617D2837DBA100EBC982 /* ImagePicker.swift in Sources */,
+				DA23615F28356BDC00EBC982 /* ContentView.swift in Sources */,
+				DAE4C8BB2849579C00F83B16 /* NewScrollView.swift in Sources */,
+				DA03A3D52838498D00128B90 /* PetInformationViewModel.swift in Sources */,
+				DA23615D28356BDC00EBC982 /* DairyPetApp.swift in Sources */,
+				DA03A3D7283859FB00128B90 /* ListingCardView.swift in Sources */,
+				DA63580928427628005B6F34 /* EmptyListsView.swift in Sources */,
+				DA63580728426596005B6F34 /* PetAddView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DA23616528356BDD00EBC982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA23616628356BDD00EBC982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA23616828356BDD00EBC982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DairyPet/Preview Content\"";
+				DEVELOPMENT_TEAM = B397XJU6A4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Wants to access to your devices camere for take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Wants to access to your devices camere for take photos.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calculate.DairyPet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA23616928356BDD00EBC982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DairyPet/Preview Content\"";
+				DEVELOPMENT_TEAM = B397XJU6A4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Wants to access to your devices camere for take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Wants to access to your devices camere for take photos.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calculate.DairyPet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA23615428356BDB00EBC982 /* Build configuration list for PBXProject "DairyPet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA23616528356BDD00EBC982 /* Debug */,
+				DA23616628356BDD00EBC982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA23616728356BDD00EBC982 /* Build configuration list for PBXNativeTarget "DairyPet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA23616828356BDD00EBC982 /* Debug */,
+				DA23616928356BDD00EBC982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA03A3D1283847C300128B90 /* PetDiary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA03A3D2283847C300128B90 /* PetDiary.xcdatamodel */,
+			);
+			currentVersion = DA03A3D2283847C300128B90 /* PetDiary.xcdatamodel */;
+			path = PetDiary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DA23615128356BDB00EBC982 /* Project object */;
+}

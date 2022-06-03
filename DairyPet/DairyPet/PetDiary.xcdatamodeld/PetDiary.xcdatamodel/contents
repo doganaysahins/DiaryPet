@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PetInformation" representedClassName="PetInformation" syncable="YES" codeGenerationType="class">
+        <attribute name="alpha" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="blue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="breed" optional="YES" attributeType="String"/>
+        <attribute name="brithDate" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="green" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="imagePet" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="ownerAdress" optional="YES" attributeType="String"/>
+        <attribute name="ownerEmail" optional="YES" attributeType="String"/>
+        <attribute name="ownerName" optional="YES" attributeType="String"/>
+        <attribute name="ownerPhone" optional="YES" attributeType="String"/>
+        <attribute name="red" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="weight" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="PetInformation" positionX="-63" positionY="-18" width="128" height="254"/>
+    </elements>
+</model>
