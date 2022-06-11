@@ -28,56 +28,27 @@ struct ProfileView: View {
         
         ScrollView(.vertical, showsIndicators: false) {
             let tagColour = Color(red: infos.red, green: infos.green, blue: infos.blue, opacity: infos.alpha)
-        
-        HStack{
-            VStack(alignment : .leading){
-                Text(infos.birthDate)
-                    .font(.caption)
-                    
-                    .fontWeight(.ultraLight)
-                
-                Button {
-                    infoListVM.updateImagePet(newImage: imgPicker.image ?? UIImage(), petID: infos.petID)
-                    
-                } label: {
-                    Text("Edit")
-                }
-
-                Text(infos.name)
-                    .font(.largeTitle)
-            }
-            .padding()
-            Spacer()
             
-            Image(uiImage: infos.imagePet ?? UIImage())
-                .resizable()
-                .scaledToFill()
-                .clipShape(Circle())
-                .overlay(Circle()
-                    .stroke(tagColour, lineWidth: 3))
-                .padding(.leading, 10)
-                .shadow(radius: 5)
-                .frame(width: 80, height: 80, alignment: .center)
-                .padding()
-                
-                .overlay {
-                    ZStack(alignment : .topLeading){
-                        HStack{
+            VStack{
+                CardView(name : infos.name, type: infos.type, petGender: infos.petGender, petWeight: infos.petWeight, petBreed: infos.petBreed, birthDate: infos.birthDate, petImage: infos.imagePet ?? UIImage(), circleColor: tagColour)
+                    .overlay {
+                        ZStack(alignment : .topLeading){
+                            HStack{
+                                Spacer()
+                                Button {
+                                    self.confirmationDialog.toggle()
+                                } label: {
+                                    Image(systemName: "camera.on.rectangle.fill")
+                                        .padding(.bottom, 20)
+                                }.padding(.trailing, 10)
+                            }
                             Spacer()
-                            Button {
-                                self.confirmationDialog.toggle()
-                            } label: {
-                                Image(systemName: "camera.on.rectangle.fill")
-                                    .padding(.bottom, 20)
-                            }.padding(.trailing, 10)
                         }
-                        Spacer()
-                    }
-                   
+                       
 
-                }
-            
-        }
+                    }
+            }
+        
         .sheet(isPresented: $imgPicker.showPicker, onDismiss: {
             print("dissmisssss")
             infoListVM.updateImagePet(newImage: imgPicker.image ?? UIImage(), petID: infos.petID)
@@ -94,7 +65,6 @@ struct ProfileView: View {
             
         }
         
-            InfoBarView(petGender: infos.petGender, petWeight: infos.petWeight, petBreed: infos.petBreed, petBirthDate: infos.birthDate)
                     
             
             VStack{
