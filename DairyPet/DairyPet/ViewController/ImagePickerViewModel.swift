@@ -16,6 +16,9 @@ class ImagePickerViewModel : ObservableObject{
 
     
     
+
+    
+    
     func showMePicker(){
         if source == .camera{
             if !PickerTypes.checkPermissions(){

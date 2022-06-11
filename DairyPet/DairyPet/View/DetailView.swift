@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DetailView: View {
     var infos : PetInfo
+    @State var confirmationDialog = false
+    @StateObject var imgPicker = ImagePickerViewModel()
+    @StateObject private var infoListVM = PetInformationViewModel()
     var body: some View {
         
             
@@ -24,7 +27,22 @@ struct DetailView: View {
                     
                     .shadow(radius: 5)
                     .frame(width: 180, height: 180, alignment: .center)
-                    
+                    .overlay {
+                        ZStack(alignment : .topLeading){
+                            HStack{
+                                Spacer()
+                                Button {
+                                    self.confirmationDialog.toggle()
+                                } label: {
+                                    Image(systemName: "camera.on.rectangle.fill")
+                                        .padding(.bottom, 20)
+                                }.padding(.trailing, 10)
+                            }
+                            Spacer()
+                        }
+                       
+
+                    }
                 Text(infos.name)
                     .font(Font.system(size: 28))
                 
@@ -69,9 +87,47 @@ struct DetailView: View {
                     }
                     
                 }.padding()
+                Button {
+                    infoListVM.updateImagePet(newImage: imgPicker.image ?? UIImage(), petID: infos.petID)
+                    infoListVM.getAllTasks()
+                    
+                } label: {
+                    Text("Save Changes")
+                }
+
+                
                 
                 Spacer()
                 
+            }
+            .sheet(isPresented: $imgPicker.showPicker) {
+                
+                
+                                    ImagePicker(sourceType: imgPicker.source == .library ? .photoLibrary : .camera, selectedImage: $imgPicker.image)
+                
+                                        .ignoresSafeArea()
+                
+            
+
+                
+            }
+                
+            .confirmationDialog("Upload image", isPresented: $confirmationDialog) {
+                Button {
+                    imgPicker.source = .library
+                    imgPicker.showMePicker()
+                    
+                } label: {
+                    Text("From Photos")
+                }
+                
+                Button {
+                    imgPicker.source = .camera
+                    imgPicker.showMePicker()
+                } label: {
+                    Text("From Camera")
+                }
+
             }
             }.navigationViewStyle(.stack)
             

@@ -14,9 +14,13 @@ struct ProfileView: View {
     @State var goMedical = false
     @State var cDate = Date()
     @State var selection = 0
-    
+    @State var confirmationDialog = false
+    @State var imageChanged = false
+    @Environment(\.presentationMode) private var presentationMode
     var infos : PetInfo
-    
+    @StateObject var imgPicker = ImagePickerViewModel()
+    @StateObject private var infoListVM = PetInformationViewModel()
+
     
     var body: some View {
         
@@ -31,6 +35,14 @@ struct ProfileView: View {
                     .font(.caption)
                     
                     .fontWeight(.ultraLight)
+                
+                Button {
+                    infoListVM.updateImagePet(newImage: imgPicker.image ?? UIImage(), petID: infos.petID)
+                    
+                } label: {
+                    Text("Edit")
+                }
+
                 Text(infos.name)
                     .font(.largeTitle)
             }
@@ -47,10 +59,42 @@ struct ProfileView: View {
                 .shadow(radius: 5)
                 .frame(width: 80, height: 80, alignment: .center)
                 .padding()
+                
+                .overlay {
+                    ZStack(alignment : .topLeading){
+                        HStack{
+                            Spacer()
+                            Button {
+                                self.confirmationDialog.toggle()
+                            } label: {
+                                Image(systemName: "camera.on.rectangle.fill")
+                                    .padding(.bottom, 20)
+                            }.padding(.trailing, 10)
+                        }
+                        Spacer()
+                    }
+                   
+
+                }
+            
+        }
+        .sheet(isPresented: $imgPicker.showPicker, onDismiss: {
+            print("dissmisssss")
+            infoListVM.updateImagePet(newImage: imgPicker.image ?? UIImage(), petID: infos.petID)
+            infoListVM.getAllTasks()
+        }){
+            
+            
+                                ImagePicker(sourceType: imgPicker.source == .library ? .photoLibrary : .camera, selectedImage: $imgPicker.image)
+            
+                                    .ignoresSafeArea()
+            
+                
+
             
         }
         
-//            InfoBarView(petGender: infos.petGender, petWeight: infos.petWeight, petBreed: infos.petBreed, petBirthDate: infos.birthDate)
+            InfoBarView(petGender: infos.petGender, petWeight: infos.petWeight, petBreed: infos.petBreed, petBirthDate: infos.birthDate)
                     
             
             VStack{
@@ -79,111 +123,31 @@ struct ProfileView: View {
                 }
             }
             
-//            VStack(spacing : 0){
-//                HStack(spacing : 10){
-//                    Button {
-//                        self.goMedical.toggle()
-//                    } label: {
-//                        RoundedRectangle(cornerRadius: 25)
-//                            .frame(width: 150, height: 200, alignment: .center)
-//
-//
-//                            .overlay {
-//                                VStack{
-//                                    Image(systemName: "pencil")
-//                                        .resizable()
-//                                        .frame(width: 50, height: 50, alignment: .center)
-//
-//                                    NavigationLink("Medical Record", destination:CustomDatePicker(currentDate: $cDate),isActive: $goMedical)
-//
-//                                }.foregroundColor(.white)
-//
-//                            }
-//
-//
-//
-//
-//                    }.foregroundColor(.green)
-//
-//
-//
-//                    Button {
-//                        self.goSchedule.toggle()
-//                    } label: {
-//                        RoundedRectangle(cornerRadius: 25)
-//                            .frame(width: 150, height: 200, alignment: .center)
-//
-//
-//                            .overlay {
-//                                VStack{
-//                                    Image(systemName: "pencil")
-//                                        .resizable()
-//                                        .frame(width: 50, height: 50, alignment: .center)
-//
-//                                    NavigationLink("Scheduled visits", destination:EmptyView(),isActive: $goSchedule)
-//
-//                                }.foregroundColor(.white)
-//
-//                            }
-//                    }.foregroundColor(.green)
-//
-//
-//                }
-//
-//
-//                HStack(spacing : 10){
-//                    Button {
-//                        self.goDetails.toggle()
-//                    } label: {
-//                        RoundedRectangle(cornerRadius: 25)
-//                            .frame(width: 150, height: 200, alignment: .center)
-//
-//
-//                            .overlay {
-//                                VStack{
-//                                    Image(systemName: "pencil")
-//                                        .resizable()
-//                                        .frame(width: 50, height: 50, alignment: .center)
-//
-//                                    NavigationLink("Detailed Information", destination:DetailView(infos: infos),isActive: $goDetails)
-//
-//                                }.foregroundColor(.white)
-//
-//                            }
-//                    }.foregroundColor(.green)
-//
-//                    Button {
-//                        self.goVaccination.toggle()
-//                    } label: {
-//                        RoundedRectangle(cornerRadius: 25)
-//                            .frame(width: 150, height: 200, alignment: .center)
-//
-//
-//                            .overlay {
-//                                VStack{
-//                                    Image(systemName: "pencil")
-//                                        .resizable()
-//                                        .frame(width: 50, height: 50, alignment: .center)
-//
-//                                    NavigationLink("Vaccination schedule", destination:EmptyView(),isActive: $goVaccination)
-//
-//                                }.foregroundColor(.white)
-//
-//                            }
-//                    }.foregroundColor(.green)
-//
-//
-//                }.padding()
-//
-//            }
+
         }
-        
-//        .navigationBarHidden(true)
+        .confirmationDialog("Upload image", isPresented: $confirmationDialog) {
+            Button {
+                imgPicker.source = .library
+                imgPicker.showMePicker()
+                
+            } label: {
+                Text("From Photos")
+            }
+            
+            Button {
+                imgPicker.source = .camera
+                imgPicker.showMePicker()
+            } label: {
+                Text("From Camera")
+            }
+
+        }
         
         
                 
         
     }
+
     
 }
 

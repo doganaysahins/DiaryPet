@@ -30,6 +30,15 @@ class PetInformationViewModel : ObservableObject {
         tasks = CoreDataManager.shared.getAllInformation().map(PetInfo.init)
     }
     
+    func updateImagePet(newImage : UIImage, petID : String){
+        do {
+            try CoreDataManager.shared.updateImage(petID: petID , newImage: newImage)
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    
     
     func delete(_ task: PetInfo) {
         
@@ -43,6 +52,7 @@ class PetInformationViewModel : ObservableObject {
               petBreed : String, petWeight : String, petBirth : String, ownerName : String, ownerAdress : String, ownerEmail : String, ownerPhone : String) {
         
         let task = PetInformation(context: CoreDataManager.shared.viewContext)
+        task.petID = UUID()
         task.name = petName
         task.type = petType
         task.gender = petGender

@@ -18,6 +18,14 @@ struct PetInfo{
         return info.objectID
     }
     
+    var petID : String {
+        guard let petID = self.info.petID else{
+            return ""
+        }
+        
+        return petID.uuidString
+    }
+    
     var type : String{
         return info.type ?? " "
     }
@@ -86,10 +94,12 @@ struct PetInfo{
 }
 
 
-struct Pets{
-    
-    var id: String
-    var name : String
-    var type : String
-    var imagePet : String
-}
+//struct PetsViewState{
+//    
+//    var imagePetNew : UIImage?{
+//        guard let data = info.imagePet else {
+//            return nil
+//        }
+//        return UIImage(data: data)
+//    }
+//}
