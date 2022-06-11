@@ -44,8 +44,6 @@ struct ProfileView: View {
                             }
                             Spacer()
                         }
-                       
-
                     }
             }
         
