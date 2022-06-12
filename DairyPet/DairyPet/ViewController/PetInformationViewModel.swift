@@ -9,6 +9,12 @@ import Foundation
 import CoreData
 import UIKit
 
+
+
+
+
+
+
 class PetInformationViewModel : ObservableObject {
     @Published var name : String = " "
     @Published var type : String = " "
@@ -37,6 +43,8 @@ class PetInformationViewModel : ObservableObject {
             print(error.localizedDescription)
         }
     }
+    
+
     
     
     

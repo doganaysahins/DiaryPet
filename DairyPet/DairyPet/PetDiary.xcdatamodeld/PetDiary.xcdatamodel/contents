@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MedicineInformation" representedClassName="MedicineInformation" syncable="YES" codeGenerationType="class">
+        <attribute name="medicineBegin" optional="YES" attributeType="String"/>
+        <attribute name="medicineDose" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="medicineDuration" optional="YES" attributeType="String"/>
+        <attribute name="medicineFinish" optional="YES" attributeType="String"/>
+        <attribute name="medicineMG" optional="YES" attributeType="String"/>
+        <attribute name="medicineName" optional="YES" attributeType="String"/>
+        <attribute name="petID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
     <entity name="PetInformation" representedClassName="PetInformation" syncable="YES" codeGenerationType="class">
         <attribute name="alpha" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="blue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -14,11 +23,18 @@
         <attribute name="ownerName" optional="YES" attributeType="String"/>
         <attribute name="ownerPhone" optional="YES" attributeType="String"/>
         <attribute name="petID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="petMedicineBegin" optional="YES" attributeType="String"/>
+        <attribute name="petMedicineDose" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="petMedicineDuration" optional="YES" attributeType="String"/>
+        <attribute name="petMedicineFinish" optional="YES" attributeType="String"/>
+        <attribute name="petMedicineName" optional="YES" attributeType="String"/>
+        <attribute name="petMedmg" optional="YES" attributeType="String"/>
         <attribute name="red" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="weight" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="PetInformation" positionX="-63" positionY="-18" width="128" height="269"/>
+        <element name="PetInformation" positionX="-63" positionY="-18" width="128" height="359"/>
+        <element name="MedicineInformation" positionX="-63" positionY="99" width="128" height="134"/>
     </elements>
 </model>

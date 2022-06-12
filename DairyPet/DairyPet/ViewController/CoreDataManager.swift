@@ -18,8 +18,38 @@ class CoreDataManager{
         return persistentContainer.viewContext
     }
     
+    var viewContextMedicine: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+    
+    
+    
+    func addMedicine(petID : String, medicineName : String, medicineMG : String, medicineDose : Double, medicineDuration: String, medicineBegin : String, medicineFinish : String){
+        let medicineToAdd = getMedByID(petid: UUID(uuidString: petID)!)
+        
+        if let medicineToAdd = medicineToAdd {
+            medicineToAdd.medicineName = medicineName
+            medicineToAdd.medicineMG = medicineMG
+            medicineToAdd.medicineDose = medicineDose
+            medicineToAdd.medicineDuration = medicineDuration
+            medicineToAdd.medicineBegin = medicineBegin
+            medicineToAdd.medicineFinish = medicineFinish
+            try save()
+        }
+    }
+    
     func getImageByID(petid : UUID) -> PetInformation? {
         let request : NSFetchRequest<PetInformation> = PetInformation.fetchRequest()
+        request.predicate = NSPredicate(format: "petID = %@", (petid.uuidString))
+        
+        let results = try! self.viewContext.fetch(request)
+        return results.first
+    }
+    
+    
+    
+    func getMedByID(petid : UUID) -> MedicineInformation? {
+        let request : NSFetchRequest<MedicineInformation> = MedicineInformation.fetchRequest()
         request.predicate = NSPredicate(format: "petID = %@", (petid.uuidString))
         
         let results = try! self.viewContext.fetch(request)
@@ -57,6 +87,17 @@ class CoreDataManager{
     
     func getAllInformation() -> [PetInformation] {
         let request : NSFetchRequest<PetInformation> = PetInformation.fetchRequest()
+        
+        do {
+            return try viewContext.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
+    
+    func getAllInformationMedicine() -> [MedicineInformation] {
+        let request : NSFetchRequest<MedicineInformation> = MedicineInformation.fetchRequest()
         
         do {
             return try viewContext.fetch(request)

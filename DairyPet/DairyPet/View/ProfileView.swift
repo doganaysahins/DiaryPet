@@ -20,13 +20,13 @@ struct ProfileView: View {
     var infos : PetInfo
     @StateObject var imgPicker = ImagePickerViewModel()
     @StateObject private var infoListVM = PetInformationViewModel()
-
+    @StateObject private var medVM = PetMedicineViewModel()
     
     var body: some View {
         
             
         
-        ScrollView(.vertical, showsIndicators: false) {
+        
             let tagColour = Color(red: infos.red, green: infos.green, blue: infos.blue, opacity: infos.alpha)
             
             VStack{
@@ -78,7 +78,10 @@ struct ProfileView: View {
                 
                 switch selection{
                 case 0:
-                    EmptyView()
+                    MedicalView(infos: infos)
+                        .onAppear {
+                            medVM.getAllMeds()
+                        }
                 case 1:
                     CustomDatePicker(currentDate: $cDate)
                 case 2:
@@ -92,7 +95,7 @@ struct ProfileView: View {
             }
             
 
-        }
+        
         .confirmationDialog("Upload image", isPresented: $confirmationDialog) {
             Button {
                 imgPicker.source = .library

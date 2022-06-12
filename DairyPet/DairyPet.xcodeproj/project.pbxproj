@@ -26,6 +26,7 @@
 		DA23617D2837DBA100EBC982 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617C2837DBA100EBC982 /* ImagePicker.swift */; };
 		DA23617F2837DC9500EBC982 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */; };
 		DA3A3A6D2854BEE700F50BA3 /* NewProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A3A6C2854BEE700F50BA3 /* NewProfileView.swift */; };
+		DA3A3A76285505E000F50BA3 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = DA3A3A75285505E000F50BA3 /* Charts */; };
 		DA3F99B4284AD27800CA1301 /* DetailTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F99B3284AD27800CA1301 /* DetailTabbarView.swift */; };
 		DA6357FF283FEE45005B6F34 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6357FE283FEE45005B6F34 /* DetailView.swift */; };
 		DA63580128401D95005B6F34 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580028401D95005B6F34 /* ProfileView.swift */; };
@@ -34,6 +35,8 @@
 		DA63580728426596005B6F34 /* PetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580628426596005B6F34 /* PetAddView.swift */; };
 		DA63580928427628005B6F34 /* EmptyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580828427628005B6F34 /* EmptyListsView.swift */; };
 		DAE4C8BB2849579C00F83B16 /* NewScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */; };
+		DAFF75122855485A0010D17C /* MedicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF75112855485A0010D17C /* MedicalView.swift */; };
+		DAFF751428563AF70010D17C /* PetMedicalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF751328563AF70010D17C /* PetMedicalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,8 @@
 		DA63580628426596005B6F34 /* PetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddView.swift; sourceTree = "<group>"; };
 		DA63580828427628005B6F34 /* EmptyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListsView.swift; sourceTree = "<group>"; };
 		DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScrollView.swift; sourceTree = "<group>"; };
+		DAFF75112855485A0010D17C /* MedicalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalView.swift; sourceTree = "<group>"; };
+		DAFF751328563AF70010D17C /* PetMedicalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetMedicalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3A3A76285505E000F50BA3 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +143,7 @@
 				DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */,
 				DA3F99B3284AD27800CA1301 /* DetailTabbarView.swift */,
 				DA3A3A6C2854BEE700F50BA3 /* NewProfileView.swift */,
+				DAFF75112855485A0010D17C /* MedicalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +164,7 @@
 				DA03A3CD2838426A00128B90 /* CoreDataManager.swift */,
 				DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */,
 				DA03A3D42838498D00128B90 /* PetInformationViewModel.swift */,
+				DAFF751328563AF70010D17C /* PetMedicalViewModel.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -186,6 +194,9 @@
 			dependencies = (
 			);
 			name = DairyPet;
+			packageProductDependencies = (
+				DA3A3A75285505E000F50BA3 /* Charts */,
+			);
 			productName = DairyPet;
 			productReference = DA23615928356BDB00EBC982 /* DairyPet.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +225,9 @@
 				Base,
 			);
 			mainGroup = DA23615028356BDB00EBC982;
+			packageReferences = (
+				DA3A3A74285505E000F50BA3 /* XCRemoteSwiftPackageReference "swiftui-charts" */,
+			);
 			productRefGroup = DA23615A28356BDB00EBC982 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -250,6 +264,7 @@
 				DA03A3D0283842A900128B90 /* PetInfo.swift in Sources */,
 				DA23616E28356D1C00EBC982 /* TabbarView.swift in Sources */,
 				DA63580328403BCC005B6F34 /* DateValue.swift in Sources */,
+				DAFF75122855485A0010D17C /* MedicalView.swift in Sources */,
 				DA03A3D3283847C300128B90 /* PetDiary.xcdatamodeld in Sources */,
 				DA03A3CE2838426A00128B90 /* CoreDataManager.swift in Sources */,
 				DA63580128401D95005B6F34 /* ProfileView.swift in Sources */,
@@ -258,6 +273,7 @@
 				DA23617028356D8C00EBC982 /* SettingsView.swift in Sources */,
 				DA23617D2837DBA100EBC982 /* ImagePicker.swift in Sources */,
 				DA23615F28356BDC00EBC982 /* ContentView.swift in Sources */,
+				DAFF751428563AF70010D17C /* PetMedicalViewModel.swift in Sources */,
 				DAE4C8BB2849579C00F83B16 /* NewScrollView.swift in Sources */,
 				DA03A3D52838498D00128B90 /* PetInformationViewModel.swift in Sources */,
 				DA3A3A6D2854BEE700F50BA3 /* NewProfileView.swift in Sources */,
@@ -478,6 +494,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA3A3A74285505E000F50BA3 /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA3A3A75285505E000F50BA3 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA3A3A74285505E000F50BA3 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DA03A3D1283847C300128B90 /* PetDiary.xcdatamodeld */ = {

@@ -91,6 +91,9 @@ struct PetInfo{
     var ownerEmail : String{
         return info.ownerPhone ?? ""
     }
+    
+
+    
 }
 
 
@@ -103,3 +106,46 @@ struct PetInfo{
 //        return UIImage(data: data)
 //    }
 //}
+
+
+
+struct MedicineInfo {
+    
+    let medInfo : MedicineInformation
+    
+    
+    var id : NSManagedObjectID {
+        return medInfo.objectID
+    }
+    
+    var petID : String {
+        guard let petID = self.medInfo.petID else{
+            return ""
+        }
+        
+        return petID.uuidString
+    }
+    
+    var petMedicineName : String{
+        return medInfo.medicineName ?? ""
+    }
+    
+    var petMedmg : String{
+        return medInfo.medicineMG ?? ""
+    }
+    
+    var petMedicineDose : Double{
+        return medInfo.medicineDose
+    }
+    
+    var petMedicineBegin : String{
+        return medInfo.medicineBegin ?? ""
+    }
+    var petMedicineFinish : String{
+        return medInfo.medicineFinish ?? ""
+    }
+    
+    var petMedicineDuration : String{
+        return medInfo.medicineDuration ?? ""
+    }
+}

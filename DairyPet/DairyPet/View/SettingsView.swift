@@ -6,10 +6,22 @@
 //
 
 import SwiftUI
+import Charts
 
 struct SettingsView: View {
+    var demoData: [Int] = [1, 2, 3, 6, 12, 2, 2]
     var body: some View {
-        Text("Settings")
+        VStack{
+            
+            Chart(data: [0.5, 0.5, 0.9, 0.4])
+                .chartStyle(
+                    StackedColumnChartStyle(spacing: 2, cornerRadius: 3, colors: [.yellow, .orange, .red])
+                )
+        
+
+            
+
+        }
     }
 }
 
