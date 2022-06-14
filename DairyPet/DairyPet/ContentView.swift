@@ -59,7 +59,10 @@ struct ContentView: View {
                         let tagColour = Color(red: info.red, green: info.green, blue: info.blue, opacity: info.alpha)
                         
                         ListingCardView(name:info.name, type: info.type, birthDate: info.birthDate, petImage: info.imagePet ?? UIImage(), backgrounColor: tagColour).background(NavigationLink("", destination: {
+                            
                                 ProfileView(infos: info).navigationBarTitleDisplayMode(.inline)
+                            
+                                
                         }))
                             
                             

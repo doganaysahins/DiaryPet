@@ -30,25 +30,30 @@ struct MedicalView: View {
             
         
         
-            VStack {
-                Spacer()
+        
+                
+            VStack{
                
+                
+            
                 List{
                     ForEach(medViewModel.medicals, id : \.id) { medicalInfo in
+                        if medicalInfo.petID == infos.petID{
+                            
                         
                             Text(medicalInfo.petID)
                         Text(medicalInfo.petMedicineName)
+                        }
                         
-
                        
                     }
                 }
-                
+            
                 
                 HStack{
                     
                     Spacer()
-                    Text(infos.petID)
+                    
                     Button {
                         self.addMedical.toggle()
                     } label: {
@@ -59,8 +64,8 @@ struct MedicalView: View {
                 }
                 .padding()
                
-                
-               
+            }.frame(height : 300)
+        
                 
                 
 //                    .navigationTitle("Medical Record")
@@ -75,7 +80,7 @@ struct MedicalView: View {
                 
                
             
-            }
+            
 
             .onAppear(perform: {
                 medViewModel.getAllMeds()

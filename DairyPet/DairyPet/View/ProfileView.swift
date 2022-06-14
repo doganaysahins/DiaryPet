@@ -24,7 +24,13 @@ struct ProfileView: View {
     
     var body: some View {
         
+       
+        ScrollView(.vertical, showsIndicators: false){
             
+        
+       
+            
+        
         
         
             let tagColour = Color(red: infos.red, green: infos.green, blue: infos.blue, opacity: infos.alpha)
@@ -95,7 +101,7 @@ struct ProfileView: View {
             }
             
 
-        
+        }
         .confirmationDialog("Upload image", isPresented: $confirmationDialog) {
             Button {
                 imgPicker.source = .library
