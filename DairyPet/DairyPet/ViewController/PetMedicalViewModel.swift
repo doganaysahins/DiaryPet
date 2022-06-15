@@ -17,17 +17,27 @@ class PetMedicineViewModel : ObservableObject{
 
     
     
-    func saveMed(petID : String ,medName : String, medDose : Double, medFin : String, medBegin : String, medDuration : String){
+    func saveMed(petID : String ,medName : String, medDose : Double, medFin : String, medBegin : String, medDuration : String, medMG : String, medType : Bool){
         let meds = MedicineInformation(context: CoreDataManager.shared.viewContextMedicine)
         meds.petID = UUID(uuidString: petID)
         meds.medicineName = medName
         meds.medicineDose = medDose
         meds.medicineFinish = medFin
-        
+        meds.medicineMG = medMG
         meds.medicineBegin = medBegin
-        
+        meds.medType = medType
         meds.medicineDuration = medDuration
         CoreDataManager.shared.save()
+    }
+    
+    
+    
+    func delete(_ med: MedicineInfo) {
+        
+        let existingTask = CoreDataManager.shared.getInfoByIdFromMed(id: med.id)
+        if let existingTask = existingTask {
+            CoreDataManager.shared.deleteInfoFromMED(task: existingTask)
+        }
     }
     
     

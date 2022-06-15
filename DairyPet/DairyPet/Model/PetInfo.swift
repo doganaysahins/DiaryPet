@@ -148,4 +148,8 @@ struct MedicineInfo {
     var petMedicineDuration : String{
         return medInfo.medicineDuration ?? ""
     }
+    
+    var petMedicineType : Bool{
+        return medInfo.medType 
+    }
 }

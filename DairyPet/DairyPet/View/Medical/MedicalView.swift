@@ -10,19 +10,27 @@ import SwiftUI
 struct MedicalView: View {
     
     @State var addMedical = false
-    @State var pillPicker = 0
+    @State var pillPicker = true
     @State var liqPicker = false
     @State var beginDate = Date()
     @State var finishDate = Date()
     @State var medicineName = ""
     @State var medicineMG = ""
     @State private var value : Double = 0
-    @State private var selected = ""
+    @State private var selected = "Every hour"
     @StateObject private var medViewModel = PetMedicineViewModel()
     var infos : PetInfo
     let colors: [Color] = [.orange, .red, .gray, .blue,
                                .green, .purple, .pink]
     
+    
+    func deletePet(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let task = medViewModel.medicals[index]
+            medViewModel.delete(task)
+        }
+        medViewModel.getAllMeds()
+    }
 
     var body: some View {
         
@@ -33,7 +41,8 @@ struct MedicalView: View {
         
                 
             VStack{
-               
+
+                
                 
             
                 List{
@@ -41,42 +50,47 @@ struct MedicalView: View {
                         if medicalInfo.petID == infos.petID{
                             
                         
-                            Text(medicalInfo.petID)
-                        Text(medicalInfo.petMedicineName)
+                            MedicalCardView(medicineTitle: medicalInfo.petMedicineName, medicineBeginDate: medicalInfo.petMedicineBegin, medicineFinDate: medicalInfo.petMedicineFinish, medicineDose: medicalInfo.petMedicineDose, medicineMG: medicalInfo.petMedmg, duration: medicalInfo.petMedicineDuration, medicineType: medicalInfo.petMedicineType)
                         }
                         
                        
-                    }
+                    }.onDelete(perform: deletePet)
+                        .listRowSeparator(.hidden)
+
                 }
+
             
+                
+
+               
+            }.frame(height : 500)
+            .overlay(
+                
+                    
+               
+                VStack{
+                   
                 
                 HStack{
                     
-                    Spacer()
                     
+                    Spacer()
                     Button {
                         self.addMedical.toggle()
                     } label: {
                         Image(systemName: "plus.circle.fill")
                             .font(.largeTitle)
                     }
-
+                    
                 }
-                .padding()
-               
-            }.frame(height : 300)
+                    Spacer()
+                }.padding()
+                
+            )
         
                 
                 
-//                    .navigationTitle("Medical Record")
-//                    .toolbar {
-//                        Button {
-//                            self.addMedical.toggle()
-//                        } label: {
-//                            Text("Add")
-//                        }
-//
-//                    }
+
                 
                
             
@@ -92,25 +106,22 @@ struct MedicalView: View {
                 
                 VStack{
                     
-                    GroupBox("Medicine type"){
-                        
-                    
-                    VStack {
-                        Picker("Flavor", selection: $pillPicker) {
-                            Text("Pill")
-                                .tag(0)
-                            Text("Liquid")
-                                .tag(1)
-                        }
-                        
-                    }
-                    .pickerStyle(.segmented)
-                    .padding()
-                    }.groupBoxStyle(CardGroupBoxStyle())
-                        
-                    if pillPicker == 0{
                         GroupBox {
+                            GroupBox{
+                                
                             
+                            VStack {
+                                Picker("Flavor", selection: $pillPicker) {
+                                    Text("Pill")
+                                        .tag(true)
+                                    Text("Liquid")
+                                        .tag(false)
+                                }
+                                
+                            }
+                            .pickerStyle(.segmented)
+                            .padding()
+                            }.groupBoxStyle(CardGroupBoxStyle())
                             
                             TextField("Medicine Name", text: $medicineName)
                                 .underlineTextField()
@@ -130,12 +141,17 @@ struct MedicalView: View {
                                 
                                 Picker("Flavor", selection: $selected) {
                                     Text("Every hour")
+                                        .tag("Ever hour")
                                     Text("Every 12 hours")
+                                        .tag("Every 12 hours")
                                     Text("Everyday")
+                                        .tag("Everyday")
                                     Text("Every week")
+                                        .tag("Every week")
                                     Text("Every month")
+                                        .tag("Every month")
                             }
-                                Stepper("\(value)" + " dose") {
+                                Stepper("\(Int(value))" + " dose") {
                                     incrementStep()
                                 } onDecrement: {
                                     decrementStep()
@@ -159,7 +175,7 @@ struct MedicalView: View {
 
                             
                             
-                            HStack{
+                            HStack(alignment : .center){
                                 
                             
                             GroupBox("Begin") {
@@ -168,7 +184,7 @@ struct MedicalView: View {
                                     
                                 
                             }.groupBoxStyle(CardGroupBoxStyle())
-                                
+                                Spacer()
                                 GroupBox("Finish") {
                                     DatePicker("Begin", selection: $finishDate, displayedComponents: .date)
                                         
@@ -179,32 +195,34 @@ struct MedicalView: View {
                             
                             
                         } label: {
-                            Text("Medicines")
+                            Text("Medicine").font(.largeTitle.bold())
                         }
                         
-                        .padding()
+                        
                         .groupBoxStyle(CardGroupBoxStyle())
                         
-                        
-                    }
+                        Spacer()
+                }
                     
-
+                    ZStack{
+                        
+                    
                     Button {
       
                         withAnimation {
                             
-
+                            print(selected)
                             self.addMedical.toggle()
-                            medViewModel.saveMed(petID: infos.petID, medName: medicineName, medDose: value, medFin: finishDate.formatted(date: .complete, time: .omitted), medBegin: beginDate.formatted(date: .complete, time: .omitted), medDuration: selected)
+                            medViewModel.saveMed(petID: infos.petID, medName: medicineName, medDose: value, medFin: finishDate.formatted(date:.abbreviated, time: .omitted), medBegin: beginDate.formatted(date: .abbreviated, time: .omitted), medDuration: selected, medMG: medicineMG, medType: pillPicker)
                         }
                     } label: {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.green)
                         Text("Done")
                             .foregroundColor(.green)
+                    }.padding(.bottom, 20)
                     }
-                    Spacer()
-                }
+                
 
 
             }

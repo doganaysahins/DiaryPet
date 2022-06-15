@@ -34,6 +34,7 @@
 		DA63580528403BEE005B6F34 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580428403BEE005B6F34 /* Task.swift */; };
 		DA63580728426596005B6F34 /* PetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580628426596005B6F34 /* PetAddView.swift */; };
 		DA63580928427628005B6F34 /* EmptyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580828427628005B6F34 /* EmptyListsView.swift */; };
+		DAE205B6285A4BE2003E58AE /* MedicalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE205B5285A4BE2003E58AE /* MedicalCardView.swift */; };
 		DAE4C8BB2849579C00F83B16 /* NewScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */; };
 		DAFF75122855485A0010D17C /* MedicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF75112855485A0010D17C /* MedicalView.swift */; };
 		DAFF751428563AF70010D17C /* PetMedicalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF751328563AF70010D17C /* PetMedicalViewModel.swift */; };
@@ -68,6 +69,7 @@
 		DA63580428403BEE005B6F34 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		DA63580628426596005B6F34 /* PetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddView.swift; sourceTree = "<group>"; };
 		DA63580828427628005B6F34 /* EmptyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListsView.swift; sourceTree = "<group>"; };
+		DAE205B5285A4BE2003E58AE /* MedicalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCardView.swift; sourceTree = "<group>"; };
 		DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScrollView.swift; sourceTree = "<group>"; };
 		DAFF75112855485A0010D17C /* MedicalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalView.swift; sourceTree = "<group>"; };
 		DAFF751328563AF70010D17C /* PetMedicalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetMedicalViewModel.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		DA23616A28356CF600EBC982 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAE205B4285A4ADC003E58AE /* Medical */,
 				DA23616D28356D1C00EBC982 /* TabbarView.swift */,
 				DA23616F28356D8C00EBC982 /* SettingsView.swift */,
 				DA23617128356D9C00EBC982 /* ScheduleView.swift */,
@@ -143,7 +146,6 @@
 				DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */,
 				DA3F99B3284AD27800CA1301 /* DetailTabbarView.swift */,
 				DA3A3A6C2854BEE700F50BA3 /* NewProfileView.swift */,
-				DAFF75112855485A0010D17C /* MedicalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +178,15 @@
 				DA23617C2837DBA100EBC982 /* ImagePicker.swift */,
 			);
 			path = Representable;
+			sourceTree = "<group>";
+		};
+		DAE205B4285A4ADC003E58AE /* Medical */ = {
+			isa = PBXGroup;
+			children = (
+				DAFF75112855485A0010D17C /* MedicalView.swift */,
+				DAE205B5285A4BE2003E58AE /* MedicalCardView.swift */,
+			);
+			path = Medical;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				DA23617228356D9C00EBC982 /* ScheduleView.swift in Sources */,
 				DA23617F2837DC9500EBC982 /* ImagePickerViewModel.swift in Sources */,
 				DA03A3D0283842A900128B90 /* PetInfo.swift in Sources */,
+				DAE205B6285A4BE2003E58AE /* MedicalCardView.swift in Sources */,
 				DA23616E28356D1C00EBC982 /* TabbarView.swift in Sources */,
 				DA63580328403BCC005B6F34 /* DateValue.swift in Sources */,
 				DAFF75122855485A0010D17C /* MedicalView.swift in Sources */,

@@ -54,7 +54,7 @@ struct ProfileView: View {
             }
         
         .sheet(isPresented: $imgPicker.showPicker, onDismiss: {
-            print("dissmisssss")
+           
             infoListVM.updateImagePet(newImage: imgPicker.image ?? UIImage(), petID: infos.petID)
             infoListVM.getAllTasks()
         }){

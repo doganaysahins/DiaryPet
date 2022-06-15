@@ -7,6 +7,7 @@
         <attribute name="medicineFinish" optional="YES" attributeType="String"/>
         <attribute name="medicineMG" optional="YES" attributeType="String"/>
         <attribute name="medicineName" optional="YES" attributeType="String"/>
+        <attribute name="medType" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="petID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <entity name="PetInformation" representedClassName="PetInformation" syncable="YES" codeGenerationType="class">
@@ -34,7 +35,7 @@
         <attribute name="weight" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="MedicineInformation" positionX="-63" positionY="99" width="128" height="149"/>
         <element name="PetInformation" positionX="-63" positionY="-18" width="128" height="359"/>
-        <element name="MedicineInformation" positionX="-63" positionY="99" width="128" height="134"/>
     </elements>
 </model>

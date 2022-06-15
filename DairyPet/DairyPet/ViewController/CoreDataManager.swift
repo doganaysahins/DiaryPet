@@ -76,7 +76,26 @@ class CoreDataManager{
         
     }
     
+    
+    func getInfoByIdFromMed(id: NSManagedObjectID) -> MedicineInformation? {
+        
+        do {
+            return try viewContext.existingObject(with: id) as? MedicineInformation
+        } catch {
+            return nil
+        }
+        
+    }
+    
     func deleteInfo(task: PetInformation) {
+        
+        viewContext.delete(task)
+        save()
+        
+    }
+    
+    
+    func deleteInfoFromMED(task: MedicineInformation) {
         
         viewContext.delete(task)
         save()
