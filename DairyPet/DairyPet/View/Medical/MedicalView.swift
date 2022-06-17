@@ -12,6 +12,7 @@ struct MedicalView: View {
     @State var addMedical = false
     @State var pillPicker = true
     @State var liqPicker = false
+    @State var isListEmpty = 0
     @State var beginDate = Date()
     @State var finishDate = Date()
     @State var medicineName = ""
@@ -29,7 +30,7 @@ struct MedicalView: View {
             let task = medViewModel.medicals[index]
             medViewModel.delete(task)
         }
-        medViewModel.getAllMeds()
+        medViewModel.getAllMeds(petID: infos.petID)
     }
 
     var body: some View {
@@ -39,31 +40,41 @@ struct MedicalView: View {
         
         
         
-                
+        
+            
+        
             VStack{
 
                 
+
+                    
                 
-            
                 List{
+                    
                     ForEach(medViewModel.medicals, id : \.id) { medicalInfo in
-                        if medicalInfo.petID == infos.petID{
+                        
+                            
+                            MedicalCardView(medicineTitle: medicalInfo.petMedicineName, medicineBeginDate: medicalInfo.petMedicineBegin, medicineFinDate: medicalInfo.petMedicineFinish, medicineDose: medicalInfo.petMedicineDose, medicineMG: medicalInfo.petMedmg, duration: medicalInfo.petMedicineDuration, medicineType: medicalInfo.petMedicineType)
                             
                         
-                            MedicalCardView(medicineTitle: medicalInfo.petMedicineName, medicineBeginDate: medicalInfo.petMedicineBegin, medicineFinDate: medicalInfo.petMedicineFinish, medicineDose: medicalInfo.petMedicineDose, medicineMG: medicalInfo.petMedmg, duration: medicalInfo.petMedicineDuration, medicineType: medicalInfo.petMedicineType)
-                        }
                         
                        
                     }.onDelete(perform: deletePet)
                         .listRowSeparator(.hidden)
 
+                
+                }.emptyPlaceholder(medViewModel.medicals) {
+                    EmptyMedicalView()
+                        .padding()
                 }
-
-            
+                
                 
 
                
-            }.frame(height : 500)
+            }
+            .frame(height: 500)
+            .frame(maxWidth: .infinity,alignment: .center)
+            
             .overlay(
                 
                     
@@ -88,7 +99,7 @@ struct MedicalView: View {
                 
             )
         
-                
+        
                 
 
                 
@@ -97,11 +108,11 @@ struct MedicalView: View {
             
 
             .onAppear(perform: {
-                medViewModel.getAllMeds()
+                medViewModel.getAllMeds(petID: infos.petID)
             })
             
             .sheet(isPresented: $addMedical, onDismiss: {
-                medViewModel.getAllMeds()
+                medViewModel.getAllMeds(petID: infos.petID)
             }) {
                 
                 VStack{
@@ -150,7 +161,7 @@ struct MedicalView: View {
                                         .tag("Every week")
                                     Text("Every month")
                                         .tag("Every month")
-                            }
+                                }
                                 Stepper("\(Int(value))" + " dose") {
                                     incrementStep()
                                 } onDecrement: {
@@ -175,7 +186,7 @@ struct MedicalView: View {
 
                             
                             
-                            HStack(alignment : .center){
+                            HStack{
                                 
                             
                             GroupBox("Begin") {
@@ -206,7 +217,9 @@ struct MedicalView: View {
                     
                     ZStack{
                         
-                    
+                        
+                            
+                        
                     Button {
       
                         withAnimation {
@@ -217,15 +230,16 @@ struct MedicalView: View {
                         }
                     } label: {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
+                            .foregroundColor(medicineName.isEmpty ? .gray : .green)
                         Text("Done")
-                            .foregroundColor(.green)
-                    }.padding(.bottom, 20)
+                            .foregroundColor(medicineName.isEmpty ? .gray : .green)
+                    }.disabled(medicineName.isEmpty)
+                                
                     }
                 
+                    }
 
-
-            }
+            
         
             
                 

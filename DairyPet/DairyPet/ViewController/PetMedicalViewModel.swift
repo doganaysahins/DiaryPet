@@ -11,8 +11,8 @@ class PetMedicineViewModel : ObservableObject{
     @Published var medicals : [MedicineInfo] = []
     
     
-    func getAllMeds(){
-        medicals = CoreDataManager.shared.getAllInformationMedicine().map(MedicineInfo.init)
+    func getAllMeds(petID : String){
+        medicals = CoreDataManager.shared.getAllInformationMedicine(petid: UUID(uuidString: petID)!).map(MedicineInfo.init)
     }
 
     

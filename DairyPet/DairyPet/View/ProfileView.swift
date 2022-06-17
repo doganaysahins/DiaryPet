@@ -86,7 +86,7 @@ struct ProfileView: View {
                 case 0:
                     MedicalView(infos: infos)
                         .onAppear {
-                            medVM.getAllMeds()
+                            medVM.getAllMeds(petID: infos.petID)
                         }
                 case 1:
                     CustomDatePicker(currentDate: $cDate)

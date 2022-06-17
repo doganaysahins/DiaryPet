@@ -115,9 +115,9 @@ class CoreDataManager{
     }
     
     
-    func getAllInformationMedicine() -> [MedicineInformation] {
+    func getAllInformationMedicine(petid: UUID) -> [MedicineInformation] {
         let request : NSFetchRequest<MedicineInformation> = MedicineInformation.fetchRequest()
-        
+        request.predicate = NSPredicate(format: "petID = %@", (petid.uuidString))
         do {
             return try viewContext.fetch(request)
         } catch {
