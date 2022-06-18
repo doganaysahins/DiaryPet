@@ -23,9 +23,9 @@ struct CustomDatePicker: View {
     @Environment(\.defaultMinListRowHeight) var minRowHeight
 
     
-    func deleteTodo(at offsets: IndexSet) {
+    func deleteTodo(at offsets: IndexSet, data : [ScheduleInfo]) {
         offsets.forEach { index in
-            let task = scViewModel.scheduledEvents[index]
+            let task = data[index]
             scViewModel.delete(task)
             
         }
@@ -42,9 +42,14 @@ struct CustomDatePicker: View {
     
     
     var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            
+        
         VStack(spacing: 25) {
             
-
+            var infos : [ScheduleInfo] = scViewModel.scheduledEvents.filter { task in
+                return isSameDay(date1: task.scheduleDate, date2: currentDate)
+            }
             
             
             // Days
@@ -146,7 +151,7 @@ struct CustomDatePicker: View {
                     
                 
                     List{
-                        ForEach(scViewModel.scheduledEvents, id : \.id) { allEvents in
+                        ForEach(infos, id : \.id) { allEvents in
                             
                             VStack(alignment: .leading, spacing: 10){
                                 Text(convertToDateComp(selectedDate: allEvents.scheduleDate))
@@ -174,21 +179,21 @@ struct CustomDatePicker: View {
 
                                 )
                             
-                        }.onDelete(perform: deleteTodo)
-                    
+                        }
+                       
                         
                             
                         
                    
                         
                             
-//                            .onDelete { (indexSet) in
-//
-//                                    self.deleteTodo(at: indexSet, data: infos)
-//
-//                            }
+                            .onDelete { (indexSet) in
+
+                                    self.deleteTodo(at: indexSet, data: infos)
+
+                            }
                             
-                            
+                            .listRowSeparator(.hidden)
    
                             
                             
@@ -197,9 +202,9 @@ struct CustomDatePicker: View {
   
                             
                     }.frame(minWidth: minRowHeight * 2
-                        ,minHeight: minRowHeight * 5)
+                        ,minHeight: minRowHeight * 8)
                         .listStyle(.plain)
-                    
+                        
 
 
 //                        .swipeActions(edge: .trailing , allowsFullSwipe: true) {
@@ -238,6 +243,7 @@ struct CustomDatePicker: View {
             .padding()
 
             
+        }
         }
         .onAppear(perform: {
             scViewModel.getEventsAll()
@@ -399,7 +405,7 @@ struct CustomDatePicker: View {
                     
                     print(convertToDateComp(selectedDate: currentDate))
                     
-                    scViewModel.saveEvent(petID: "", title: titleText, desc: descEvent, date: currentDate, reminder: reminder)
+                    scViewModel.saveEvent(petID: "", title: titleEvent, desc: descEvent, date: currentDate, reminder: reminder)
                   
                     scViewModel.getEventsAll()
                     self.show = false
