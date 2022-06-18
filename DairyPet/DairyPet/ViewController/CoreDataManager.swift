@@ -22,6 +22,10 @@ class CoreDataManager{
         return persistentContainer.viewContext
     }
     
+    var viewContextSchedule: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+    
     
     
     func addMedicine(petID : String, medicineName : String, medicineMG : String, medicineDose : Double, medicineDuration: String, medicineBegin : String, medicineFinish : String){
@@ -38,8 +42,30 @@ class CoreDataManager{
         }
     }
     
+    
+    func addSchedule(petID : String, title : String, desc : String, date : Date, reminder: Bool){
+        let scheduleToAdd = getScheduleByID(petid: UUID(uuidString: petID)!)
+        
+        if let scheduleToAdd = scheduleToAdd {
+            scheduleToAdd.eventTitle = title
+            scheduleToAdd.eventDesc = desc
+            scheduleToAdd.eventDate = date
+            scheduleToAdd.eventReminder = reminder
+            try save()
+        }
+    }
+    
     func getImageByID(petid : UUID) -> PetInformation? {
         let request : NSFetchRequest<PetInformation> = PetInformation.fetchRequest()
+        request.predicate = NSPredicate(format: "petID = %@", (petid.uuidString))
+        
+        let results = try! self.viewContext.fetch(request)
+        return results.first
+    }
+    
+    
+    func getScheduleByID(petid : UUID) -> ScheduleInformation? {
+        let request : NSFetchRequest<ScheduleInformation> = ScheduleInformation.fetchRequest()
         request.predicate = NSPredicate(format: "petID = %@", (petid.uuidString))
         
         let results = try! self.viewContext.fetch(request)
@@ -86,6 +112,15 @@ class CoreDataManager{
         }
         
     }
+    func getInfoByIdFromScheduled(id: NSManagedObjectID) -> ScheduleInformation? {
+        
+        do {
+            return try viewContext.existingObject(with: id) as? ScheduleInformation
+        } catch {
+            return nil
+        }
+        
+    }
     
     func deleteInfo(task: PetInformation) {
         
@@ -102,11 +137,38 @@ class CoreDataManager{
         
     }
     
+    func deleteInfoFromSchedule(task: ScheduleInformation) {
+        
+        viewContext.delete(task)
+        save()
+        
+    }
+    
     
     
     func getAllInformation() -> [PetInformation] {
         let request : NSFetchRequest<PetInformation> = PetInformation.fetchRequest()
         
+        do {
+            return try viewContext.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
+    func getAllInformationScheduled() -> [ScheduleInformation] {
+        let request : NSFetchRequest<ScheduleInformation> = ScheduleInformation.fetchRequest()
+        
+        do {
+            return try viewContextSchedule.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
+    func getAllInformationScheduledID(petid: UUID) -> [ScheduleInformation] {
+        let request : NSFetchRequest<ScheduleInformation> = ScheduleInformation.fetchRequest()
+        request.predicate = NSPredicate(format: "petID = %@", (petid.uuidString))
         do {
             return try viewContext.fetch(request)
         } catch {

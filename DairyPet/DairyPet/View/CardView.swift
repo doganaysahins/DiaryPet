@@ -105,7 +105,8 @@ struct CardView : View{
                 }
             
         
-            InfoBarView(petGender: petGender, petWeight: petWeight, petBreed: petBreed, petBirthDate: birthDate)
+            NewInfoView(infoBreed: petBreed, birthDate: birthDate, infoWeight: petWeight, infoTpye: petGender)
+                
         }
         
             }
@@ -114,6 +115,6 @@ struct CardView : View{
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(name: "", type: "", petGender: "", petWeight: "", petBreed: "", birthDate: "", petImage: UIImage(), circleColor: .black)
+        CardView(name: "", type: "", petGender: "", petWeight: "", petBreed: "Breed", birthDate: "", petImage: UIImage(), circleColor: .black)
     }
 }

@@ -47,7 +47,8 @@ struct DetailView: View {
                     .font(Font.system(size: 28))
                 
               
-                InfoBarView(petGender: infos.petGender, petWeight: infos.petWeight, petBreed: infos.petBreed, petBirthDate: infos.birthDate)
+                NewInfoView(infoBreed: infos.petBreed, birthDate: infos.birthDate, infoWeight: infos.petWeight, infoTpye: infos.petGender)
+               
                 
                 GroupBox{
                     

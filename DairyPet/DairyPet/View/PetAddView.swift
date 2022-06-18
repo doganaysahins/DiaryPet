@@ -44,7 +44,7 @@ struct PetAddView: View {
 
 
             
-            CardView(name : petName, type: selectedType, petGender: selectedGender, petWeight: weight, petBreed: breed, birthDate: dateFormatter(date: birthDate), petImage: imgPicker.image ?? UIImage(), circleColor: selectedColor)
+            CardView(name : petName, type: selectedType, petGender: selectedGender, petWeight: weight, petBreed: breed, birthDate: birthDate.formatted(date: .abbreviated, time: .omitted), petImage: imgPicker.image ?? UIImage(), circleColor: selectedColor)
                 .overlay {
                     ZStack(alignment : .topLeading){
                         HStack{

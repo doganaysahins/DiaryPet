@@ -7,23 +7,49 @@
 
 import SwiftUI
 
+
 struct CustomDatePicker: View {
     
     @Binding var currentDate: Date
     @State var  currentMonth: Int = 0
+    @State var selectedDate : Date = Date()
+    @State var show = false
+    @State var reminder = false
+    @State var titleText = ""
+    @State var doneButton : Bool = false
+    @State var titleEvent = ""
+    @State var descEvent = ""
+    @StateObject private var scViewModel = PetScheduledViewModel()
+    @Environment(\.defaultMinListRowHeight) var minRowHeight
+
+    
+    func deleteTodo(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let task = scViewModel.scheduledEvents[index]
+            scViewModel.delete(task)
+            
+        }
+        scViewModel.getEventsAll()
+    }
+    
+//    func deleteTodos(at offsets: IndexSet, todoTasks : TodoInfo){
+//        var lists = todoTasks.filter { task in
+//            return isSameDay(date1: task.date, date2: currentDate)
+//        }
+//
+//
+//    }
+    
     
     var body: some View {
-        
-        ScrollView(.vertical, showsIndicators: false) {
+        VStack(spacing: 25) {
             
-       
-        
-        
-        VStack(spacing: 35) {
+
+            
             
             // Days
             let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-                        
+            
             HStack(spacing: 20) {
                 
                 VStack(alignment: .leading, spacing: 10) {
@@ -37,8 +63,6 @@ struct CustomDatePicker: View {
                 Spacer()
                 
                 Button {
-                    
-                    
                     withAnimation {
                         currentMonth -= 1
                     }
@@ -80,84 +104,180 @@ struct CustomDatePicker: View {
                   CardView(value: value)
                         .background(
                             Capsule()
-                                .fill(Color("Pink"))
+                                .fill(Color("Purple"))
                                 .padding(.horizontal, 8)
                                 .opacity(isSameDay(date1: value.date, date2: currentDate) ? 1 : 0)
                         )
                         .onTapGesture {
                             currentDate = value.date
-                            print(currentDate)
+                            
                         }
                 }
             }
+
+
             
             VStack(spacing: 15) {
-                Text("Tasks")
-                    .font(.title2.bold())
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical , 20)
-                
-                if let task = tasks.first(where: { task in
-                    return isSameDay(date1: task.taskDate, date2: currentDate)
-                }) {
-                    
-                    ForEach(task.task) { task in
-                        
-                        // For custom timing
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(task.time.addingTimeInterval(CGFloat.random(in: 0...5000)), style: .time)
-                            
-                            Text(task.title)
-                                .font(.title2.bold())
-                        }
-                        .padding(.vertical, 10)
-                        .padding(.horizontal)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(
-                            Color("Purple")
-                                .opacity(0.5)
-                                .cornerRadius(10)
-                                .frame(maxWidth: .infinity)
 
-                        )
-                        
+                HStack{
+                    
+                    Text("Tasks")
+                        .font(.title2.bold())
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.vertical , 20)
+    //
+                    
+                    
+                    Button {
+                        self.show = true
+                    } label: {
+                        Image(systemName: "plus").foregroundColor(Color("Purple"))
+                            
                     }
-                     
-                }else {
-                    Text("No Task Found")
                 }
+
+                
+               
+//                if let tasks = infoListVM.tasks.filter({ task in
+//
+//                    return isSameDay(date1: task.date, date2: currentDate)
+//                }) {
+               
+                    
+                
+                    List{
+                        ForEach(scViewModel.scheduledEvents, id : \.id) { allEvents in
+                            
+                            VStack(alignment: .leading, spacing: 10){
+                                Text(convertToDateComp(selectedDate: allEvents.scheduleDate))
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                                Text(allEvents.scheduleTitle)
+                                    .font(.title2.bold())
+                                Text(allEvents.scheduleDesc)
+                                    .font(.subheadline)
+                                HStack{
+                                    Spacer()
+                                    Image(systemName: allEvents.reminder ? "bell" : "bell.slash")
+
+                                }
+                            }.padding(.vertical, 10)
+                                .padding(.horizontal)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(
+                                    Color("Purple")
+                                    
+                                        .opacity(0.5)
+                                        .cornerRadius(10)
+                                        
+                                        .frame(maxWidth: .infinity)
+
+                                )
+                            
+                        }.onDelete(perform: deleteTodo)
+                    
+                        
+                            
+                        
+                   
+                        
+                            
+//                            .onDelete { (indexSet) in
+//
+//                                    self.deleteTodo(at: indexSet, data: infos)
+//
+//                            }
+                            
+                            
+   
+                            
+                            
+                        
+                    
+  
+                            
+                    }.frame(minWidth: minRowHeight * 2
+                        ,minHeight: minRowHeight * 5)
+                        .listStyle(.plain)
+                    
+
+
+//                        .swipeActions(edge: .trailing , allowsFullSwipe: true) {
+//                            Button {
+//                                print("swiped")
+//                            } label: {
+//                                Image(systemName: "bell")
+//                            }
+//                            .tint(.yellow)
+//
+//
+//
+//                            Button {
+//                                print("edited")
+//                            } label: {
+//                                Image(systemName: "square.and.pencil")
+//                            }
+//                            .tint(.blue)
+//
+//                            Button {
+//
+//
+//                            } label: {
+//                                Image(systemName: "trash.fill")
+//                            }
+//
+//                            .tint(.red)
+//
+//                        }
+                        
+                        
+            
+                     
+
             }
             .padding()
 
             
         }
+        .onAppear(perform: {
+            scViewModel.getEventsAll()
+        })
+        .sheet(isPresented: $show, content: {
+
+            
+            sheetBody
+
+
+            
+            
+            
+        })
         .onChange(of: currentMonth) { newValue in
             // update month
             currentDate = getCurrentMonth()
-        }
         }
     }
     
     @ViewBuilder
     func CardView(value: DateValue) -> some View {
-        
+
         VStack {
             
             if value.day != -1 {
                 
-                if let task = tasks.first(where: { task in
-                    return isSameDay(date1: task.taskDate, date2: value.date)
+                if let task = scViewModel.scheduledEvents.first(where: { task in
+                    return isSameDay(date1: task.scheduleDate, date2: value.date)
                 }) {
 
                     Text("\(value.day)")
                         .font(.title3.bold())
-                        .foregroundColor(isSameDay(date1: task.taskDate, date2: currentDate) ? .white : .primary)
+                        .foregroundColor(isSameDay(date1: task.scheduleDate, date2: currentDate) ? .white : .primary)
                         .frame(maxWidth: .infinity)
 
                     Spacer()
 
                     Circle()
-                        .fill(isSameDay(date1: task.taskDate, date2: currentDate) ? .white : Color("Pink") )
+                        .fill(isSameDay(date1: task.scheduleDate, date2: currentDate) ? .white : Color("Pink") )
                         .frame(width: 8, height: 8)
 
                 }else {
@@ -178,8 +298,22 @@ struct CustomDatePicker: View {
     }
     // Checking dates
     func isSameDay(date1: Date, date2: Date) -> Bool {
+
         
         return Calendar.current.isDate(date1, inSameDayAs: date2)
+        
+    }
+    
+    func convertToDateComp(selectedDate : Date) -> String{
+        
+        let cal = Calendar.current
+        let datec = cal.dateComponents([.year,.month,.weekday,.day,.hour,.minute], from: selectedDate)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM dd, yyyy 'at' HH:mm"
+        
+        return formatter.string(from: Calendar(identifier: .gregorian).date(from: datec)!)
+        
         
     }
     
@@ -229,6 +363,72 @@ struct CustomDatePicker: View {
         return days
     }
     
+    var sheetBody : some View{
+        return NavigationView{
+            Form{
+                Section("Title"){
+                    TextField("Title", text: $titleEvent)
+                }
+                Section("Description"){
+                    TextEditor(text: $descEvent)
+                }
+      
+                Section("Time"){
+                    DatePicker("Time", selection: $currentDate, displayedComponents: .hourAndMinute)
+                        
+                }
+                
+                Section("Remind Me"){
+//                    Toggle("Remind Me", isOn: $infoListVM.reminder)
+                }
+                
+                
+                
+                Button {
+                    print("added")
+                    let cl = Calendar.current
+                    let dc = cl.dateComponents([.year,.month,.day,.weekday,.hour,.minute], from: currentDate)
+                    
+                    print(dc.year)
+                    print(dc.month)
+                    print(dc.day)
+                    print(dc.weekday)
+                    print(dc.hour)
+                    print(dc.minute)
+
+                    
+                    print(convertToDateComp(selectedDate: currentDate))
+                    
+                    scViewModel.saveEvent(petID: "", title: titleText, desc: descEvent, date: currentDate, reminder: reminder)
+                  
+                    scViewModel.getEventsAll()
+                    self.show = false
+                    
+
+                    
+                }
+            
+            
+                label: {
+                    Text("Add")
+                }
+                
+                
+            }.navigationBarTitle(Text(convertToDateComp(selectedDate:currentDate)), displayMode: .inline)
+               
+        
+            
+            
+        
+        }
+        
+      
+            
+       
+       
+        
+    }
+    
 }
 
 struct CustomDatePicker_Previews: PreviewProvider {
@@ -257,4 +457,8 @@ extension Date {
     }
     
     
+
+    
+    
 }
+

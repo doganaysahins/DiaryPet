@@ -34,8 +34,16 @@
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="weight" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="ScheduleInformation" representedClassName="ScheduleInformation" syncable="YES" codeGenerationType="class">
+        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="eventDesc" optional="YES" attributeType="String"/>
+        <attribute name="eventReminder" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="eventTitle" optional="YES" attributeType="String"/>
+        <attribute name="petID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
     <elements>
         <element name="MedicineInformation" positionX="-63" positionY="99" width="128" height="149"/>
         <element name="PetInformation" positionX="-63" positionY="-18" width="128" height="359"/>
+        <element name="ScheduleInformation" positionX="-63" positionY="144" width="128" height="104"/>
     </elements>
 </model>

@@ -72,7 +72,7 @@ struct ProfileView: View {
                     
             
             VStack{
-                Tabs(tabs: .constant(["Medical Records","Scheduled visits","Vaccination","Detailed Information"]), selection: $selection, underlineColor: .black) { title, isSelected in
+                Tabs(tabs: .constant(["Medical Records","Vet Records","Foods","Detailed Information"]), selection: $selection, underlineColor: .black) { title, isSelected in
                     
                     Text(title)
                         
@@ -89,7 +89,8 @@ struct ProfileView: View {
                             medVM.getAllMeds(petID: infos.petID)
                         }
                 case 1:
-                    CustomDatePicker(currentDate: $cDate)
+//                    CustomDatePicker(currentDate: $cDate)
+                    EmptyView()
                 case 2:
                     EmptyView()
                 case 3:

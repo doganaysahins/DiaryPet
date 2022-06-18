@@ -20,6 +20,7 @@ struct MedicalView: View {
     @State private var value : Double = 0
     @State private var selected = "Every hour"
     @StateObject private var medViewModel = PetMedicineViewModel()
+    @StateObject private var sc = PetScheduledViewModel()
     var infos : PetInfo
     let colors: [Color] = [.orange, .red, .gray, .blue,
                                .green, .purple, .pink]

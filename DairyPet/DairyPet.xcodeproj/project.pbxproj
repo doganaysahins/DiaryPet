@@ -21,7 +21,6 @@
 		DA23617228356D9C00EBC982 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617128356D9C00EBC982 /* ScheduleView.swift */; };
 		DA2361742835875F00EBC982 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2361732835875F00EBC982 /* Extentions.swift */; };
 		DA23617628358ACA00EBC982 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617528358ACA00EBC982 /* CardView.swift */; };
-		DA23617828358F2500EBC982 /* InfoBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617728358F2500EBC982 /* InfoBarView.swift */; };
 		DA23617A2835C58500EBC982 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2361792835C58500EBC982 /* Messages.swift */; };
 		DA23617D2837DBA100EBC982 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617C2837DBA100EBC982 /* ImagePicker.swift */; };
 		DA23617F2837DC9500EBC982 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */; };
@@ -34,6 +33,8 @@
 		DA63580528403BEE005B6F34 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580428403BEE005B6F34 /* Task.swift */; };
 		DA63580728426596005B6F34 /* PetAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580628426596005B6F34 /* PetAddView.swift */; };
 		DA63580928427628005B6F34 /* EmptyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63580828427628005B6F34 /* EmptyListsView.swift */; };
+		DAD978B2285DF51F00692DE1 /* NewInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD978B1285DF51F00692DE1 /* NewInfoView.swift */; };
+		DAD978B4285E1E3B00692DE1 /* PetScheduledViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD978B3285E1E3B00692DE1 /* PetScheduledViewModel.swift */; };
 		DAE205B6285A4BE2003E58AE /* MedicalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE205B5285A4BE2003E58AE /* MedicalCardView.swift */; };
 		DAE205B9285BBB71003E58AE /* EmptyMedicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE205B8285BBB71003E58AE /* EmptyMedicalView.swift */; };
 		DAE4C8BB2849579C00F83B16 /* NewScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */; };
@@ -58,7 +59,6 @@
 		DA23617128356D9C00EBC982 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		DA2361732835875F00EBC982 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		DA23617528358ACA00EBC982 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		DA23617728358F2500EBC982 /* InfoBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBarView.swift; sourceTree = "<group>"; };
 		DA2361792835C58500EBC982 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		DA23617C2837DBA100EBC982 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
@@ -70,6 +70,8 @@
 		DA63580428403BEE005B6F34 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		DA63580628426596005B6F34 /* PetAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddView.swift; sourceTree = "<group>"; };
 		DA63580828427628005B6F34 /* EmptyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListsView.swift; sourceTree = "<group>"; };
+		DAD978B1285DF51F00692DE1 /* NewInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInfoView.swift; sourceTree = "<group>"; };
+		DAD978B3285E1E3B00692DE1 /* PetScheduledViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetScheduledViewModel.swift; sourceTree = "<group>"; };
 		DAE205B5285A4BE2003E58AE /* MedicalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCardView.swift; sourceTree = "<group>"; };
 		DAE205B8285BBB71003E58AE /* EmptyMedicalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMedicalView.swift; sourceTree = "<group>"; };
 		DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScrollView.swift; sourceTree = "<group>"; };
@@ -139,7 +141,6 @@
 				DA23616F28356D8C00EBC982 /* SettingsView.swift */,
 				DA23617128356D9C00EBC982 /* ScheduleView.swift */,
 				DA23617528358ACA00EBC982 /* CardView.swift */,
-				DA23617728358F2500EBC982 /* InfoBarView.swift */,
 				DA03A3D6283859FB00128B90 /* ListingCardView.swift */,
 				DA6357FE283FEE45005B6F34 /* DetailView.swift */,
 				DA2361792835C58500EBC982 /* Messages.swift */,
@@ -148,6 +149,7 @@
 				DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */,
 				DA3F99B3284AD27800CA1301 /* DetailTabbarView.swift */,
 				DA3A3A6C2854BEE700F50BA3 /* NewProfileView.swift */,
+				DAD978B1285DF51F00692DE1 /* NewInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +171,7 @@
 				DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */,
 				DA03A3D42838498D00128B90 /* PetInformationViewModel.swift */,
 				DAFF751328563AF70010D17C /* PetMedicalViewModel.swift */,
+				DAD978B3285E1E3B00692DE1 /* PetScheduledViewModel.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -276,7 +279,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA23617828358F2500EBC982 /* InfoBarView.swift in Sources */,
 				DA23617A2835C58500EBC982 /* Messages.swift in Sources */,
 				DA6357FF283FEE45005B6F34 /* DetailView.swift in Sources */,
 				DA3F99B4284AD27800CA1301 /* DetailTabbarView.swift in Sources */,
@@ -292,6 +294,7 @@
 				DA03A3CE2838426A00128B90 /* CoreDataManager.swift in Sources */,
 				DA63580128401D95005B6F34 /* ProfileView.swift in Sources */,
 				DA63580528403BEE005B6F34 /* Task.swift in Sources */,
+				DAD978B4285E1E3B00692DE1 /* PetScheduledViewModel.swift in Sources */,
 				DA2361742835875F00EBC982 /* Extentions.swift in Sources */,
 				DA23617028356D8C00EBC982 /* SettingsView.swift in Sources */,
 				DA23617D2837DBA100EBC982 /* ImagePicker.swift in Sources */,
@@ -305,6 +308,7 @@
 				DA03A3D7283859FB00128B90 /* ListingCardView.swift in Sources */,
 				DA63580928427628005B6F34 /* EmptyListsView.swift in Sources */,
 				DA63580728426596005B6F34 /* PetAddView.swift in Sources */,
+				DAD978B2285DF51F00692DE1 /* NewInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

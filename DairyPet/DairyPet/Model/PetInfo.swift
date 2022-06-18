@@ -153,3 +153,39 @@ struct MedicineInfo {
         return medInfo.medType 
     }
 }
+
+
+struct ScheduleInfo {
+    let scheduleInfo : ScheduleInformation
+    
+    
+    var id : NSManagedObjectID {
+        return scheduleInfo.objectID
+    }
+    
+    var petID : String {
+        guard let petID = self.scheduleInfo.petID else{
+            return ""
+        }
+        
+        return petID.uuidString
+    }
+    
+    var scheduleTitle : String{
+        return scheduleInfo.eventTitle ?? ""
+    }
+
+    var scheduleDate : Date{
+        return scheduleInfo.eventDate ?? Date()
+        
+    }
+    
+    var scheduleDesc : String{
+        return scheduleInfo.eventDesc ?? ""
+    }
+    
+    var reminder : Bool{
+        return scheduleInfo.eventReminder
+    }
+
+}
