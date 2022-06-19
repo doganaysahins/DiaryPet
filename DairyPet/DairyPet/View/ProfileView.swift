@@ -90,7 +90,7 @@ struct ProfileView: View {
                         }
                 case 1:
 //                    CustomDatePicker(currentDate: $cDate)
-                    EmptyView()
+                    VetRecordsView(infos: infos)
                 case 2:
                     EmptyView()
                 case 3:

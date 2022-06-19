@@ -19,7 +19,12 @@ struct CustomDatePicker: View {
     @State var doneButton : Bool = false
     @State var titleEvent = ""
     @State var descEvent = ""
+    @State var selector = ""
+    @State var selectedPet = UIImage()
+    @State var isImageSelected = false
+    
     @StateObject private var scViewModel = PetScheduledViewModel()
+    @StateObject private var infoListVM = PetInformationViewModel()
     @Environment(\.defaultMinListRowHeight) var minRowHeight
 
     
@@ -149,35 +154,25 @@ struct CustomDatePicker: View {
 //                }) {
                
                     
-                
+              
                     List{
                         ForEach(infos, id : \.id) { allEvents in
                             
-                            VStack(alignment: .leading, spacing: 10){
-                                Text(convertToDateComp(selectedDate: allEvents.scheduleDate))
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                                Text(allEvents.scheduleTitle)
-                                    .font(.title2.bold())
-                                Text(allEvents.scheduleDesc)
-                                    .font(.subheadline)
-                                HStack{
-                                    Spacer()
-                                    Image(systemName: allEvents.reminder ? "bell" : "bell.slash")
-
-                                }
-                            }.padding(.vertical, 10)
-                                .padding(.horizontal)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .background(
-                                    Color("Purple")
-                                    
-                                        .opacity(0.5)
-                                        .cornerRadius(10)
-                                        
-                                        .frame(maxWidth: .infinity)
-
-                                )
+                           
+                            
+                            
+                                ScheduleCardView(scheduleTitle: allEvents.scheduleTitle, scheduleDesc: allEvents.scheduleDesc, scheduleDate: allEvents.scheduleDate.formatted(date: .abbreviated, time: .omitted), selectedImage: selectedPet)
+                            
+//                                .background(
+//
+//
+//
+//                                        .opacity(0.5)
+//                                        .cornerRadius(10)
+//
+//                                        .frame(maxWidth: .infinity)
+//
+//                                )
                             
                         }
                        
@@ -372,6 +367,46 @@ struct CustomDatePicker: View {
     var sheetBody : some View{
         return NavigationView{
             Form{
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack{
+         
+                        ForEach(infoListVM.tasks, id : \.id){petImages in
+                            Image(uiImage: petImages.imagePet ?? UIImage())
+                                .resizable()
+                                .scaledToFill()
+                                .clipShape(Circle())
+                                
+                                .frame(width: 100, height: 100, alignment: .center)
+                                
+                                .gesture(TapGesture().onEnded({ () in
+                                    self.isImageSelected.toggle()
+                                    self.selector = petImages.petID
+                                    self.selectedPet = petImages.imagePet ?? UIImage()
+                                    
+                                }))
+                                .overlay(
+                                    VStack{
+                                        Spacer()
+                                        HStack{
+                                            
+                                        Spacer()
+                                        Image(systemName: selector == petImages.petID ? "checkmark.circle.fill" : "")
+                                            .foregroundColor(.green)
+                                            .font(.largeTitle)
+                                            
+                                        }
+
+                                    }
+                                        
+                                )
+                                
+                        }
+                    
+                    }
+                      
+                }
+                
+                
                 Section("Title"){
                     TextField("Title", text: $titleEvent)
                 }
@@ -388,10 +423,17 @@ struct CustomDatePicker: View {
 //                    Toggle("Remind Me", isOn: $infoListVM.reminder)
                 }
                 
+
+                
+
+                
+                
+                
                 
                 
                 Button {
                     print("added")
+                    print(selector)
                     let cl = Calendar.current
                     let dc = cl.dateComponents([.year,.month,.day,.weekday,.hour,.minute], from: currentDate)
                     
@@ -405,7 +447,7 @@ struct CustomDatePicker: View {
                     
                     print(convertToDateComp(selectedDate: currentDate))
                     
-                    scViewModel.saveEvent(petID: "", title: titleEvent, desc: descEvent, date: currentDate, reminder: reminder)
+                    scViewModel.saveEvent(petID: selector, title: titleEvent, desc: descEvent, date: currentDate, reminder: reminder)
                   
                     scViewModel.getEventsAll()
                     self.show = false
@@ -426,6 +468,8 @@ struct CustomDatePicker: View {
             
             
         
+        }.onAppear {
+            infoListVM.getAllTasks()
         }
         
       

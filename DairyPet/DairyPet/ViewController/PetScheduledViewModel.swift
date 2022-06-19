@@ -10,10 +10,10 @@ import Foundation
 class PetScheduledViewModel : ObservableObject{
     @Published var scheduledEvents : [ScheduleInfo] = []
     
-//
-//    func getAllEventsWithID(petID : String){
-//        scheduledEvents = CoreDataManager.shared.getAllInformationScheduledID(petid: UUID(uuidString: petID)!).map(ScheduleInfo.init)
-//    }
+
+    func getAllEventsWithID(petID : String){
+        scheduledEvents = CoreDataManager.shared.getAllInformationScheduledID(petid: UUID(uuidString: petID)!).map(ScheduleInfo.init)
+    }
     
     func getEventsAll(){
         scheduledEvents = CoreDataManager.shared.getAllInformationScheduled().map(ScheduleInfo.init)
@@ -44,6 +44,16 @@ class PetScheduledViewModel : ObservableObject{
     func addScheduleEvent(petID: String, title: String, desc: String, date: Date, reminder: Bool){
         do{
             try CoreDataManager.shared.addSchedule(petID: petID, title: title, desc: desc, date: date, reminder: reminder)
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    
+    
+    func getPetImage(petID : String){
+        do {
+            try CoreDataManager.shared.getSelectedPetsImage(petid: UUID(uuidString: petID)!)
         }catch{
             print(error.localizedDescription)
         }

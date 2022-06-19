@@ -64,6 +64,17 @@ class CoreDataManager{
     }
     
     
+    
+    
+    func getSelectedPetsImage(petid : UUID) -> Data? {
+        let request : NSFetchRequest<PetInformation> = PetInformation.fetchRequest()
+        request.predicate = NSPredicate(format: "petID = %@", (petid.uuidString))
+        
+        let results = try! self.viewContext.fetch(request)
+        return results.first?.imagePet
+    }
+    
+    
     func getScheduleByID(petid : UUID) -> ScheduleInformation? {
         let request : NSFetchRequest<ScheduleInformation> = ScheduleInformation.fetchRequest()
         request.predicate = NSPredicate(format: "petID = %@", (petid.uuidString))

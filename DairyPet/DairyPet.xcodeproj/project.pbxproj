@@ -12,6 +12,9 @@
 		DA03A3D3283847C300128B90 /* PetDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA03A3D1283847C300128B90 /* PetDiary.xcdatamodeld */; };
 		DA03A3D52838498D00128B90 /* PetInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A3D42838498D00128B90 /* PetInformationViewModel.swift */; };
 		DA03A3D7283859FB00128B90 /* ListingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A3D6283859FB00128B90 /* ListingCardView.swift */; };
+		DA174755285F46F90058E696 /* VetRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA174754285F46F90058E696 /* VetRecordsView.swift */; };
+		DA174758285F4D630058E696 /* VetRecordsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA174757285F4D630058E696 /* VetRecordsCardView.swift */; };
+		DA17475B285F64510058E696 /* ScheduleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17475A285F64510058E696 /* ScheduleCardView.swift */; };
 		DA23615D28356BDC00EBC982 /* DairyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23615C28356BDC00EBC982 /* DairyPetApp.swift */; };
 		DA23615F28356BDC00EBC982 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23615E28356BDC00EBC982 /* ContentView.swift */; };
 		DA23616128356BDD00EBC982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA23616028356BDD00EBC982 /* Assets.xcassets */; };
@@ -24,7 +27,6 @@
 		DA23617A2835C58500EBC982 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2361792835C58500EBC982 /* Messages.swift */; };
 		DA23617D2837DBA100EBC982 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617C2837DBA100EBC982 /* ImagePicker.swift */; };
 		DA23617F2837DC9500EBC982 /* ImagePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */; };
-		DA3A3A6D2854BEE700F50BA3 /* NewProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A3A6C2854BEE700F50BA3 /* NewProfileView.swift */; };
 		DA3A3A76285505E000F50BA3 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = DA3A3A75285505E000F50BA3 /* Charts */; };
 		DA3F99B4284AD27800CA1301 /* DetailTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F99B3284AD27800CA1301 /* DetailTabbarView.swift */; };
 		DA6357FF283FEE45005B6F34 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6357FE283FEE45005B6F34 /* DetailView.swift */; };
@@ -49,6 +51,9 @@
 		DA03A3D2283847C300128B90 /* PetDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetDiary.xcdatamodel; sourceTree = "<group>"; };
 		DA03A3D42838498D00128B90 /* PetInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInformationViewModel.swift; sourceTree = "<group>"; };
 		DA03A3D6283859FB00128B90 /* ListingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCardView.swift; sourceTree = "<group>"; };
+		DA174754285F46F90058E696 /* VetRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetRecordsView.swift; sourceTree = "<group>"; };
+		DA174757285F4D630058E696 /* VetRecordsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetRecordsCardView.swift; sourceTree = "<group>"; };
+		DA17475A285F64510058E696 /* ScheduleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardView.swift; sourceTree = "<group>"; };
 		DA23615928356BDB00EBC982 /* DairyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DairyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA23615C28356BDC00EBC982 /* DairyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyPetApp.swift; sourceTree = "<group>"; };
 		DA23615E28356BDC00EBC982 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,7 +67,6 @@
 		DA2361792835C58500EBC982 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		DA23617C2837DBA100EBC982 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		DA23617E2837DC9500EBC982 /* ImagePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewModel.swift; sourceTree = "<group>"; };
-		DA3A3A6C2854BEE700F50BA3 /* NewProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileView.swift; sourceTree = "<group>"; };
 		DA3F99B3284AD27800CA1301 /* DetailTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabbarView.swift; sourceTree = "<group>"; };
 		DA6357FE283FEE45005B6F34 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DA63580028401D95005B6F34 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -91,6 +95,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA174756285F47050058E696 /* VetRecords */ = {
+			isa = PBXGroup;
+			children = (
+				DA174754285F46F90058E696 /* VetRecordsView.swift */,
+				DA174757285F4D630058E696 /* VetRecordsCardView.swift */,
+			);
+			path = VetRecords;
+			sourceTree = "<group>";
+		};
+		DA174759285F64390058E696 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				DA23617128356D9C00EBC982 /* ScheduleView.swift */,
+				DA17475A285F64510058E696 /* ScheduleCardView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
 		DA23615028356BDB00EBC982 = {
 			isa = PBXGroup;
 			children = (
@@ -135,11 +157,12 @@
 		DA23616A28356CF600EBC982 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA174759285F64390058E696 /* Schedule */,
+				DA174756285F47050058E696 /* VetRecords */,
 				DAE205B7285BBB56003E58AE /* EmptyStateViews */,
 				DAE205B4285A4ADC003E58AE /* Medical */,
 				DA23616D28356D1C00EBC982 /* TabbarView.swift */,
 				DA23616F28356D8C00EBC982 /* SettingsView.swift */,
-				DA23617128356D9C00EBC982 /* ScheduleView.swift */,
 				DA23617528358ACA00EBC982 /* CardView.swift */,
 				DA03A3D6283859FB00128B90 /* ListingCardView.swift */,
 				DA6357FE283FEE45005B6F34 /* DetailView.swift */,
@@ -148,7 +171,6 @@
 				DA63580628426596005B6F34 /* PetAddView.swift */,
 				DAE4C8BA2849579C00F83B16 /* NewScrollView.swift */,
 				DA3F99B3284AD27800CA1301 /* DetailTabbarView.swift */,
-				DA3A3A6C2854BEE700F50BA3 /* NewProfileView.swift */,
 				DAD978B1285DF51F00692DE1 /* NewInfoView.swift */,
 			);
 			path = View;
@@ -284,11 +306,13 @@
 				DA3F99B4284AD27800CA1301 /* DetailTabbarView.swift in Sources */,
 				DA23617628358ACA00EBC982 /* CardView.swift in Sources */,
 				DA23617228356D9C00EBC982 /* ScheduleView.swift in Sources */,
+				DA174755285F46F90058E696 /* VetRecordsView.swift in Sources */,
 				DA23617F2837DC9500EBC982 /* ImagePickerViewModel.swift in Sources */,
 				DA03A3D0283842A900128B90 /* PetInfo.swift in Sources */,
 				DAE205B6285A4BE2003E58AE /* MedicalCardView.swift in Sources */,
 				DA23616E28356D1C00EBC982 /* TabbarView.swift in Sources */,
 				DA63580328403BCC005B6F34 /* DateValue.swift in Sources */,
+				DA174758285F4D630058E696 /* VetRecordsCardView.swift in Sources */,
 				DAFF75122855485A0010D17C /* MedicalView.swift in Sources */,
 				DA03A3D3283847C300128B90 /* PetDiary.xcdatamodeld in Sources */,
 				DA03A3CE2838426A00128B90 /* CoreDataManager.swift in Sources */,
@@ -296,6 +320,7 @@
 				DA63580528403BEE005B6F34 /* Task.swift in Sources */,
 				DAD978B4285E1E3B00692DE1 /* PetScheduledViewModel.swift in Sources */,
 				DA2361742835875F00EBC982 /* Extentions.swift in Sources */,
+				DA17475B285F64510058E696 /* ScheduleCardView.swift in Sources */,
 				DA23617028356D8C00EBC982 /* SettingsView.swift in Sources */,
 				DA23617D2837DBA100EBC982 /* ImagePicker.swift in Sources */,
 				DAE205B9285BBB71003E58AE /* EmptyMedicalView.swift in Sources */,
@@ -303,7 +328,6 @@
 				DAFF751428563AF70010D17C /* PetMedicalViewModel.swift in Sources */,
 				DAE4C8BB2849579C00F83B16 /* NewScrollView.swift in Sources */,
 				DA03A3D52838498D00128B90 /* PetInformationViewModel.swift in Sources */,
-				DA3A3A6D2854BEE700F50BA3 /* NewProfileView.swift in Sources */,
 				DA23615D28356BDC00EBC982 /* DairyPetApp.swift in Sources */,
 				DA03A3D7283859FB00128B90 /* ListingCardView.swift in Sources */,
 				DA63580928427628005B6F34 /* EmptyListsView.swift in Sources */,
